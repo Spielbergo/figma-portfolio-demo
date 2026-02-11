@@ -1,4 +1,32 @@
 // ===================================
+// HEADER SCROLL EFFECT
+// ===================================
+
+(function() {
+    'use strict';
+    
+    const header = document.querySelector('.header');
+    let lastScrollY = window.scrollY;
+    
+    function handleScroll() {
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        
+        lastScrollY = currentScrollY;
+    }
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Initial check
+    handleScroll();
+})();
+
+// ===================================
 // MOBILE MENU FUNCTIONALITY
 // ===================================
 

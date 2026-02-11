@@ -2,6 +2,8 @@
 
 A pixel-perfect, responsive portfolio website built with vanilla HTML, CSS, and JavaScript. Features a modern dark theme, smooth animations, and comprehensive accessibility support.
 
+Created from a Figma design by Srinivas.B: <a href="https://www.figma.com/proto/fgRxOG3GWtFGP3yiCxJD3F/Portfolio--Community-?node-id=54-977&t=gifQzIswr8vMW7AD-1" target="_blank" rel="noopener noreferrer">Figma prototype</a>
+
 ## ✨ Features
 
 - **Pixel-Perfect Design**: Faithfully recreated from Figma design
@@ -59,18 +61,24 @@ figma-portfolio-wp/
 ├── README.md           # Project documentation
 ├── .gitignore          # Git ignore file
 └── images/             # Image assets folder
-    ├── airbnb-logo.svg
-    ├── google-logo.svg
-    ├── microsoft-logo.svg
-    ├── fedex-logo.svg
-    ├── project-real-estate.jpg
-    ├── project-plant-app.jpg
-    ├── project-smart-home.jpg
-    ├── project-logo-animation.jpg
-    ├── about-1.jpg
-    ├── about-2.jpg
-    ├── about-3.jpg
-    └── about-4.jpg
+    ├── about-1.webp
+    ├── about-2.webp
+    ├── about-3.webp
+    ├── project-real-estate.webp
+    ├── project-plant-app.webp
+    ├── project-smart-home.webp
+    ├── project-logo-animation.webp
+    ├── logos/           # SVG logos and icons
+    │   ├── airbnb-logo.svg
+    │   ├── google-logo.svg
+    │   ├── microsoft-logo.svg
+    │   ├── fedex-logo.svg
+    │   ├── behance-logo.svg
+    │   ├── dribble-logo.svg
+    │   ├── linkedin-logo.svg
+    │   ├── envelope.svg
+    │   └── logo.svg
+    └── README.md
 ```
 
 ## 🚀 Getting Started
@@ -117,16 +125,18 @@ Edit CSS variables in `styles.css`:
 
 ### Typography
 
-The project uses Inter font from Google Fonts. To change:
+The project uses `Inter` and `Work Sans` from Google Fonts. To change or customize the fonts, update the Google Fonts link in `index.html` and the `--font-family` variable in `styles.css`.
 
 ```html
 <!-- In index.html, update the Google Fonts link -->
-<link href="https://fonts.googleapis.com/css2?family=YourFont:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 ```
 
 ```css
-/* In styles.css, update the font family */
---font-family: 'YourFont', sans-serif;
+/* In styles.css, update the font family variable */
+:root {
+    --font-family: 'Inter', 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
 ```
 
 ### Content
