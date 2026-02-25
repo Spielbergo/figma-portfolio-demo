@@ -1,7 +1,4 @@
-// ===================================
-// HEADER SCROLL EFFECT
-// ===================================
-
+// ========== HEADER SCROLL EFFECT ==========
 (function() {
     'use strict';
     
@@ -26,10 +23,7 @@
     handleScroll();
 })();
 
-// ===================================
-// MOBILE MENU FUNCTIONALITY
-// ===================================
-
+// ========== MOBILE MENU FUNCTIONALITY ========== 
 (function() {
     'use strict';
     
@@ -120,10 +114,7 @@
         }
     });
     
-    // ===================================
-    // ACTIVE NAV LINK ON SCROLL
-    // ===================================
-    
+    // ========== ACTIVE NAV LINK ON SCROLL ==========
     function updateActiveNavLink() {
         const sections = document.querySelectorAll('section[id]');
         const scrollPosition = window.scrollY + 100;
@@ -153,10 +144,7 @@
         scrollTimeout = window.requestAnimationFrame(updateActiveNavLink);
     });
     
-    // ===================================
-    // SMOOTH SCROLL FOR ALL ANCHOR LINKS
-    // ===================================
-    
+    // ========== SMOOTH SCROLL FOR ALL ANCHOR LINKS ==========    
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
@@ -185,10 +173,7 @@
         });
     });
     
-    // ===================================
-    // INTERSECTION OBSERVER FOR ANIMATIONS
-    // ===================================
-    
+    // ========== INTERSECTION OBSERVER FOR ANIMATIONS ==========    
     // Fade in elements on scroll
     const observerOptions = {
         threshold: 0.1,
@@ -212,10 +197,7 @@
         fadeInObserver.observe(card);
     });
     
-    // ===================================
-    // FOCUS TRAP FOR MOBILE MENU
-    // ===================================
-    
+    // ========== FOCUS TRAP FOR MOBILE MENU ==========    
     function trapFocus(element) {
         const focusableElements = element.querySelectorAll(
             'a[href], button:not([disabled]), textarea, input, select'
@@ -244,10 +226,7 @@
         trapFocus(navMenu);
     }
     
-    // ===================================
-    // RESIZE HANDLER
-    // ===================================
-    
+    // ========== RESIZE HANDLER ==========
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
@@ -259,9 +238,7 @@
         }, 250);
     });
     
-    // ===================================
-    // LAZY LOADING IMAGES
-    // ===================================
+    // ========== LAZY LOADING IMAGES ==========
     
     if ('loading' in HTMLImageElement.prototype) {
         // Browser supports native lazy loading
@@ -286,10 +263,7 @@
         });
     }
     
-    // ===================================
-    // INITIALIZE ON PAGE LOAD
-    // ===================================
-    
+    // ========== INITIALIZE ON PAGE LOAD ==========    
     // Set initial active nav link
     updateActiveNavLink();
     
@@ -308,10 +282,7 @@
         }, 100);
     }
     
-    // ===================================
-    // PERFORMANCE MONITORING
-    // ===================================
-    
+    // ========== PERFORMANCE MONITORING ==========    
     // Log performance metrics (optional, can be removed in production)
     if ('PerformanceObserver' in window) {
         const perfObserver = new PerformanceObserver((list) => {
