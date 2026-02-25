@@ -1,201 +1,85 @@
-# Dezign Portfolio Website
+# Dezign — UI/UX & Interaction Designer — Figma → HTML Portfolio
 
-A pixel-perfect, responsive portfolio website built with vanilla HTML, CSS, and JavaScript. Features a modern dark theme, smooth animations, and comprehensive accessibility support.
+A hand-coded, accessible, and performance-minded static portfolio site built from a Figma concept. This repository is a demo project used in a portfolio to showcase UI/UX and interaction design work.
 
-Created from a Figma design by Srinivas.B: <a href="https://www.figma.com/proto/fgRxOG3GWtFGP3yiCxJD3F/Portfolio--Community-?node-id=54-977&t=gifQzIswr8vMW7AD-1" target="_blank" rel="noopener noreferrer">Figma prototype</a>
+**Live Preview**
+- Local: run a static server and open `http://localhost:5500`.
 
-## ✨ Features
+**Figma Source**
+- Original Figma design (private/demo). If you supplied a Figma file, include a link here.
 
-- **Pixel-Perfect Design**: Faithfully recreated from Figma design
-- **Mobile-First**: Responsive design that works on all devices
-- **Accessibility**: WCAG 2.1 compliant with full keyboard navigation
-- **SEO Optimized**: Complete meta tags for search engines and social media
-- **Smooth Animations**: Intersection Observer API for performant scroll animations
-- **Mobile Navigation**: Sliding menu from the right with focus trapping
-- **Zero Dependencies**: Pure vanilla JavaScript, no frameworks needed
+**What This Project Shows**
+- Pixel-accurate layout and typography for a designer portfolio.
+- Attention to accessibility (skip link, ARIA, focus-visible styles).
+- Performance optimizations (non-blocking fonts and stylesheet preload, lazy-loaded images).
+- Modern, lightweight frontend with no framework dependencies.
 
-## 🎨 Design Features
+**Tech Stack**
+- HTML5 — semantic markup and ARIA roles.
+- CSS3 — custom properties, CSS Grid, Flexbox, responsive media queries.
+- Vanilla JavaScript — mobile nav, smooth scroll, and minimal interaction code.
+- Google Fonts — `Inter` and `Work Sans` (loaded non-blocking).
+- SVG — logo and client marks.
 
-- Dark theme with purple accent colors
-- Smooth scroll navigation
-- Animated project cards
-- Responsive grid layouts
-- Custom hamburger menu animation
-- Hover effects and transitions
+**Sections Built**
+- Header / Navigation (desktop + hamburger mobile menu)
+- Hero with headline and scroll indicator
+- Clients grid (Airbnb, Google, Microsoft, FedEx placeholders)
+- Works grid — project cards with images, categories and CTAs
+- About — short bio and image grid
+- Contact / social links and footer
 
-## 📱 Responsive Breakpoints
+**Key Implementation Details**
+- **Accessibility:** `skip to` link, meaningful `alt` text, `aria-*` attributes, keyboard focus styles.
+- **Performance:** fonts and `styles.css` are preloaded then applied via `onload` to avoid render-blocking; images use `loading="lazy"` where appropriate.
+- **Favicons:** full set included (`favicon.ico`, `favicon-16x16.png`, `favicon-32x32.png`, `apple-touch-icon.png`, `favicon.svg`). A helper `generate_favicons.py` was used to create them.
+- **Structured Data:** JSON-LD schema included in `index.html` for `WebSite`, `Person`, `WebPage`, `Organization`, and a `BreadcrumbList`. Note: the demo intentionally keeps `meta name="robots" content="noindex, nofollow"` so the site will not be indexed.
 
-- **Mobile**: 320px - 767px
-- **Tablet**: 768px - 1023px
-- **Desktop**: 1024px+
+**Files of Note**
+- `index.html` — main site markup
+- `styles.css` — site styles and design tokens
+- `script.js` — minimal interaction scripts (mobile nav toggle, etc.)
+- `images/` — project and logo assets
+- `favicon.svg`, `favicon.ico`, `favicon-16x16.png`, `favicon-32x32.png`, `apple-touch-icon.png`
+- `generate_favicons.py` — (optional) Python script that uses Pillow to regenerate PNG/ICO assets
 
-## ♿ Accessibility Features
-
-- Semantic HTML5 elements
-- ARIA labels and roles
-- Skip to main content link
-- Keyboard navigation support
-- Focus visible indicators
-- Screen reader friendly
-- Reduced motion support
-- High contrast mode support
-- Focus trap in mobile menu
-
-## 🔍 SEO Features
-
-- Complete meta tags
-- Open Graph tags for Facebook
-- Twitter Card tags
-- Semantic heading hierarchy
-- Alt text for images
-- Canonical URL
-- Mobile-friendly viewport
-
-## 📁 Project Structure
-
-```
-figma-portfolio-wp/
-├── index.html          # Main HTML file
-├── styles.css          # All styles (mobile-first)
-├── script.js           # Interactive functionality
-├── README.md           # Project documentation
-├── .gitignore          # Git ignore file
-└── images/             # Image assets folder
-    ├── about-1.webp
-    ├── about-2.webp
-    ├── about-3.webp
-    ├── project-real-estate.webp
-    ├── project-plant-app.webp
-    ├── project-smart-home.webp
-    ├── project-logo-animation.webp
-    ├── logos/           # SVG logos and icons
-    │   ├── airbnb-logo.svg
-    │   ├── google-logo.svg
-    │   ├── microsoft-logo.svg
-    │   ├── fedex-logo.svg
-    │   ├── behance-logo.svg
-    │   ├── dribble-logo.svg
-    │   ├── linkedin-logo.svg
-    │   ├── envelope.svg
-    │   └── logo.svg
-    └── README.md
-```
-
-## 🚀 Getting Started
-
-1. **Clone or download** this repository
-2. **Add your images** to the `images/` folder
-3. **Update content** in `index.html` with your information
-4. **Customize colors** in `styles.css` (CSS variables in `:root`)
-5. **Open** `index.html` in a browser
-
-### Quick Start
-
-Simply open `index.html` in your browser - no build process needed!
+**Local Development**
+No build step required — serve the folder with any static server. Example using Python:
 
 ```bash
-# If you want to use a local server (recommended)
-# Python 3
-python -m http.server 8000
-
-# Python 2
-python -m SimpleHTTPServer 8000
-
-# Node.js (with npx)
-npx serve
-
-# Then visit http://localhost:8000
+# from repository root
+python -m http.server 5500
+# then open
+# http://localhost:5500
 ```
 
-## 🎨 Customization
+To regenerate favicons (optional):
 
-### Colors
-
-Edit CSS variables in `styles.css`:
-
-```css
-:root {
-    --color-background: #0A0A0A;
-    --color-text-primary: #FFFFFF;
-    --color-text-secondary: #999999;
-    --color-accent-purple: #8B5CF6;
-    --color-accent-green: #86EFAC;
-}
+```bash
+# ensure Pillow is installed
+python -m pip install Pillow
+python generate_favicons.py
 ```
 
-### Typography
+**Testing & Validation**
+- Schema / structured data: test your `index.html` with Google's Rich Results Test or the Schema Markup Validator.
+- Performance: Lighthouse should show high scores; fonts and critical CSS are non-blocking.
+- Accessibility: run an automated audit (Lighthouse) and manual keyboard checks.
 
-The project uses `Inter` and `Work Sans` from Google Fonts. To change or customize the fonts, update the Google Fonts link in `index.html` and the `--font-family` variable in `styles.css`.
-
-```html
-<!-- In index.html, update the Google Fonts link -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+**Folder Structure**
+```
+figma-portfolio-wp/
+├── index.html
+├── styles.css
+├── script.js
+├── README.md
+├── generate_favicons.py
+└── images/
+    └── logos/
+        └── (favicons + logo + client marks)
 ```
 
-```css
-/* In styles.css, update the font family variable */
-:root {
-    --font-family: 'Inter', 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-```
+**About the Author**
+I build pixel-perfect Figma → HTML/CSS conversions and lightweight interactive prototypes. This project is a demonstration of front-end craftsmanship: semantic markup, accessible interactions, and performance-minded delivery.
 
-### Content
-
-- Update text content directly in `index.html`
-- Replace placeholder images in the `images/` folder
-- Update social media links in the contact section
-- Modify meta tags for SEO
-
-## 📝 Image Requirements
-
-### Client Logos
-- Format: SVG (recommended) or PNG
-- Size: ~150px width
-- Background: Transparent
-
-### Project Images
-- Format: JPG or WebP
-- Aspect Ratio: 16:10
-- Recommended Size: 1600x1000px
-- Optimize for web (< 200KB per image)
-
-### About Images
-- Format: JPG or WebP
-- Size: 800x800px minimum
-- Optimize for web (< 150KB per image)
-
-## 🌐 Browser Support
-
-- Chrome (last 2 versions)
-- Firefox (last 2 versions)
-- Safari (last 2 versions)
-- Edge (last 2 versions)
-- Mobile browsers (iOS Safari, Chrome Android)
-
-## ⚡ Performance
-
-- Lazy loading images
-- Minimal JavaScript
-- Optimized animations
-- No external dependencies
-- Mobile-first CSS
-
-## 📄 License
-
-This project is open source and available for personal and commercial use.
-
-## 🤝 Contributing
-
-Feel free to submit issues and enhancement requests!
-
-## 📞 Contact
-
-Update the contact section in `index.html` with your:
-- Email address
-- Behance profile
-- Instagram profile
-- LinkedIn profile
-
----
-
-**Built with ❤️ using Vanilla HTML, CSS, and JavaScript**
+If you'd like this repo prepared for deployment (manifest, service worker, or social meta tuning), I can add that next.

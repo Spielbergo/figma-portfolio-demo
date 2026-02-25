@@ -45,9 +45,76 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"></noscript>
     
-    <!-- Stylesheet (non-blocking) -->
-    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+        <!-- Stylesheet (non-blocking) -->
+        <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="styles.css"></noscript>
+
+        <!-- Structured Data / JSON-LD -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "WebSite",
+                    "@id": "https://www.dezign.com/#website",
+                    "url": "https://www.dezign.com/",
+                    "name": "Dezign - UI/UX & Interaction Designer Portfolio",
+                    "description": "I'm a UI/UX designer specializing in creating beautiful and joyful digital experiences.",
+                    "publisher": { "@id": "https://www.dezign.com/#person" },
+                    "potentialAction": {
+                        "@type": "SearchAction",
+                        "target": "https://www.dezign.com/?s={search_term_string}",
+                        "query-input": "required name=search_term_string"
+                    }
+                },
+                {
+                    "@type": "Person",
+                    "@id": "https://www.dezign.com/#person",
+                    "name": "Srinivas Dezign",
+                    "url": "https://www.dezign.com/",
+                    "sameAs": [
+                        "https://behance.net/dezign",
+                        "https://dribbble.com/dezign",
+                        "https://linkedin.com/in/dezign"
+                    ],
+                    "jobTitle": "UI/UX & Interaction Designer",
+                    "email": "mailto:hello@dezign.com",
+                    "image": "https://www.dezign.com/images/logos/logo.svg"
+                },
+                {
+                    "@type": "WebPage",
+                    "@id": "https://www.dezign.com/#webpage",
+                    "url": "https://www.dezign.com/",
+                    "name": "Dezign - UI/UX & Interaction Designer Portfolio",
+                    "isPartOf": { "@id": "https://www.dezign.com/#website" },
+                    "description": "I'm a UI/UX designer specializing in creating beautiful and joyful digital experiences.",
+                    "breadcrumb": {
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dezign.com/" },
+                            { "@type": "ListItem", "position": 2, "name": "Works", "item": "https://www.dezign.com/#works" },
+                            { "@type": "ListItem", "position": 3, "name": "About", "item": "https://www.dezign.com/#about" }
+                        ]
+                    }
+                },
+                {
+                    "@type": "Organization",
+                    "@id": "https://www.dezign.com/#organization",
+                    "name": "Dezign",
+                    "url": "https://www.dezign.com/",
+                    "logo": "https://www.dezign.com/favicon.svg",
+                    "sameAs": [
+                        "https://behance.net/dezign",
+                        "https://dribbble.com/dezign",
+                        "https://linkedin.com/in/dezign"
+                    ],
+                    "contactPoint": [
+                        { "@type": "ContactPoint", "contactType": "customer support", "email": "hello@dezign.com", "availableLanguage": "en" }
+                    ]
+                }
+            ]
+        }
+        </script>
 </head>
 <body>
     <!-- Skip to main content for accessibility -->
